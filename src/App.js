@@ -1,0 +1,23 @@
+import {
+  HashRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom"
+import Detail from "./routes/Detail";
+import Home from "./routes/Home";
+import "./App.css";
+
+
+function App() {
+  return (
+    <Router basename={process.env.PUBLIC_URL}>
+      <Routes>
+        <Route path={process.env.PUBLIC_URL + "/movie/:id"} element={<Detail/>} />
+
+        <Route path="/" element={<Home/>} />
+      </Routes>
+    </Router>
+  )
+}
+
+export default App;
